@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Intro.css';
 import Github from '../../img/github.png';
 import LinkedIn from '../../img/linkedin.png';
@@ -10,19 +10,28 @@ import thumbup from '../../img/thumbup.png';
 import Crown from '../../img/crown.png';
 import glassesimoji from '../../img/glassesimoji.png';
 import FloatingDiv from "../FloatingDiv/FloatingDiv";
+import { themeContext } from "../../Context";
+import {motion} from "framer-motion";
+import { Link } from "react-scroll";
 
 const Intro = () => {
+    const transition = {duration : 2, type:'spring'}
+
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
     return (
         <div className="intro">
             <div className="i-left">
             <div className="i-name">
-                <span>Hello Je m'appelle</span>
+                <span style={{ color: darkMode ? "white" : "" }}>Hello Je m'appelle</span>
                 <span> Florian Georges</span>
                 <span>Je suis actuellement dans ma deuxième année à l'université ! Je prépare ma licence
                 en dévelopement informatique ! Développeur Frontend , je suis passionée par tout ce qui touche aux nouvelles technologies ! </span>
             </div>
-
+                <Link to="contact" smooth={true} spy={true}>
                 <button className="button i-button">Recrutez Moi !</button>
+                </Link>
+
                 <div className="i-icons">
 
                     <a href='https://github.com/Saphii' target="_blank">
