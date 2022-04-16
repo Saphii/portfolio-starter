@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div className="n-list">
                     <ul  style={{listStyleType:'none'}}>
                         <li>Home</li>
-                        <li>Services</li>
+                        <li>Compétences</li>
                         <li>Experiences</li>
                         <li>Portfolio</li>
                         <li>Testimonials</li>
